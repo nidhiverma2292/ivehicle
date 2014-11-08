@@ -9,6 +9,6 @@ def index(request):
     return render_to_response('index.html', locals(), context_instance = RequestContext(request))
 
 def car_detail(request, id):
-    car = get_object_or_404(id=id)
+    car = get_object_or_404(Car, id=id)
 
     return render_to_response('car.html', locals(), context_instance = RequestContext(request))
