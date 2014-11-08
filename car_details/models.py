@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib import admin
+
 # Create your models here.
 
 class Car(models.Model):
@@ -12,6 +12,11 @@ class Car(models.Model):
     type = models.CharField(max_length=6, choices=car_type)
     ac = models.BooleanField(default=True)
     rent = models.IntegerField()
-    image = models.ImageField(upload_to='/car/')
+    image = models.ImageField(upload_to='/car/', blank=True)
+
+    def __unicode__(self):
+        return self.name
+
+
 
 
